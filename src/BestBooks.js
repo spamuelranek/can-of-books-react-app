@@ -18,7 +18,7 @@ class BestBooks extends React.Component {
       this.setState({books: response.data});
       console.log(this.state.books);
     } catch (e) {
-      console.error(e.response.status);
+      console.error(e.response);
       }
   }
 
@@ -36,7 +36,12 @@ class BestBooks extends React.Component {
             {
               this.state.books.map(book => {
                 return (
-          <Carousel.Item>
+          <Carousel.Item key ={book._id}>
+          <img
+          className="d-block w-75"
+          src="https://via.placeholder.com/150"
+          alt="First slide"
+          />
           <Carousel.Caption>
               <h3>{book.title}</h3>
               <p>{book.description}</p>

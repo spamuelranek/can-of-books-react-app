@@ -25,8 +25,9 @@ class App extends React.Component {
 
   loginHandler = (user) => {
     this.setState({
-      user,
+      user:user
     })
+    console.log(this.state.user);
   }
 
   logoutHandler = () => {
