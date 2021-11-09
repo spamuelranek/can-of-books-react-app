@@ -1,10 +1,24 @@
-import { Component } from 'react'
+import { Component } from 'react';
+import Button from 'react-bootstrap/Button';
+import LoginForm from './LoginForm';
 
 export default class LoginButton extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      button: true
+    }
+  }
+
+  handleButton = () => {
+    this.setState({button: true})
+  }
 
   render() {
-
-    /* TODO: Render a button with label 'Log In'. When the button is clicked then show LoginForm instead */
-    return <p>LoginButton coming soon</p>
+    return (
+      <>
+      {this.state.button ? <Button onClick = {this.handleButton}>Login</Button> : <LoginForm loginHandler = {this.props.loginHandler}/>}
+      </>
+    )
   }
 }
